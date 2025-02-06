@@ -8,9 +8,8 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      -uses: action/checkout@v4
+      - uses: action/checkout@v4
       
-      -name: run a sample
-        run: |
-          echo Hello world 
+      - name: run a sample
+        run: echo Hello world 
     
