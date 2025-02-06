@@ -1,0 +1,15 @@
+name: demo-action
+
+on:
+  push:
+    branches: main
+
+job:
+  build:
+    runs-on: windows-latest
+    steps:
+      -uses: action/checkout@v4
+      
+      -name: run a sample
+       run: echo Hello world 
+    
