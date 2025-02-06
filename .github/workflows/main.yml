@@ -28,11 +28,6 @@ jobs:
         with:
           name: my-artifact
           path: ${{ github.workspace }}
-
-      - name: Move artifact to local directory
-        run: |
-          mkdir -p C:\artifacts
-          move "${{ github.workspace }}\output.txt" "C:\artifacts\output.txt"
-        shell: powershell
+          
 
     
