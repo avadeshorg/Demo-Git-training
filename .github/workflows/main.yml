@@ -17,7 +17,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: my-artifact
-          path: ${{ github.workspace }}
+          path: output.txt
   
   deploy:
     runs-on: windows-latest
@@ -28,5 +28,11 @@ jobs:
         with:
           name: my-artifact
           path: ${{ github.workspace }}
+
+      - name: Move artifact to local directory
+        run: |
+          mkdir -p C:\artifacts
+          move "${{ github.workspace }}\output.txt" "C:\artifacts\output.txt"
+        shell: powershell
 
     
