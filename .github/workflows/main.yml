@@ -12,4 +12,11 @@ jobs:
       
       - name: run a sample
         run: echo Hello world 
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}
+
     
